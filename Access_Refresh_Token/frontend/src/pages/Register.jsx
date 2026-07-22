@@ -1,6 +1,8 @@
 import React from 'react'
+import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
+    const { handleSubmit, errors, onRegister, navigate } = useAuth();
   return (
     <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-4 py-12">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -19,7 +21,9 @@ const Register = () => {
           </p>
         </div>
 
-        <form className="space-y-5">
+        <form
+          onSubmit={handleSubmit(onRegister)}
+          className="space-y-5">
           <div>
             <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-200">
               Full name
@@ -89,9 +93,9 @@ const Register = () => {
 
         <p className="mt-6 text-center text-sm text-slate-400">
           Already have an account?{' '}
-          <a href="/" className="font-medium text-cyan-300 transition hover:text-cyan-200">
+          <button onClick={()=>{navigate("/login")}} className="font-medium text-cyan-300 transition hover:text-cyan-200">
             Login
-          </a>
+          </button>
         </p>
       </div>
     </div>

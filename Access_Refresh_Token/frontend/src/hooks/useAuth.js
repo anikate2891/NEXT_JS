@@ -7,10 +7,10 @@ export const useAuth = () => {
     const {register, handleSubmit, formState: {errors}} = useForm()
 
     const onLogin = (data) => {
-        console.log(data);
+        console.log("On Login:", data);
     }
     const onRegister = (data) => {
-        console.log(data);
+        console.log("On Register:", data);
     }
 
     return {
