@@ -82,3 +82,11 @@ export async function getAccessTokenController(req, res) {
     });
     
 }
+
+export async function getMeController(req, res) {
+    const user = req.user;
+    return res.status(200).json({
+        message: "User data retrieved successfully",
+        user: user
+    });
+}

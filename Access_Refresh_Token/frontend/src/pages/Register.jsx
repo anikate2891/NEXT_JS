@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
-    const { handleSubmit, errors, onRegister, navigate } = useAuth();
+    const { register, handleSubmit, errors, onRegister, navigate } = useAuth();
   return (
     <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-4 py-12">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -29,6 +29,7 @@ const Register = () => {
               Full name
             </label>
             <input
+            // {...register("name", { required: "Name is required" })}
               id="name"
               name="name"
               type="text"
@@ -43,6 +44,7 @@ const Register = () => {
               Email address
             </label>
             <input
+            {...register("email", { required: "Email is required" })}
               id="email"
               name="email"
               type="email"
@@ -57,6 +59,7 @@ const Register = () => {
               Password
             </label>
             <input
+              {...register("password", { required: "Password is required" })}
               id="password"
               name="password"
               type="password"
@@ -93,7 +96,7 @@ const Register = () => {
 
         <p className="mt-6 text-center text-sm text-slate-400">
           Already have an account?{' '}
-          <button onClick={()=>{navigate("/login")}} className="font-medium text-cyan-300 transition hover:text-cyan-200">
+          <button onClick={()=>{navigate("/")}} className="font-medium text-cyan-300 transition hover:text-cyan-200">
             Login
           </button>
         </p>

@@ -61,6 +61,7 @@ const Login = () => {
           </div>
 
           <button
+          onClick={()=>{navigate("/home")}}
             type="submit"
             className="w-full rounded-2xl bg-cyan-400 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
