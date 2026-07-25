@@ -10,15 +10,20 @@ axiosInstance.interceptors.response.use(
     async (error) => {
         const originalRequest = error.config;
 
-        if (error.response.status === 401 || !originalRequest._retry) {
+        if (error.response?.status === 401 || !originalRequest._retry) {
             originalRequest._retry = true;
             try {
-                await axiosInstance.get("/api/auth/get-accessToken");
+                await axios.get("http://localhost:3000/api/auth/get-accessToken", {
+                    withCredentials: true,
+                });
                 return axiosInstance(originalRequest);
             } catch (err) {
+                if (window.location.pathname !== "/") {
                     window.location.href = "/";
-                    return Promise.reject(err);
+                }
+                return Promise.reject(err);
             }
         }
+        return Promise.reject(error);
     }
 );

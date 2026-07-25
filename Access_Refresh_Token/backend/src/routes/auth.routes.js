@@ -9,6 +9,6 @@ authRouter.post("/register", registerController);
 
 authRouter.get("/me", authMiddleware, getMeController);
 
-authRouter.get("/get-accessToken", authMiddleware, getAccessTokenController);
+authRouter.get("/get-accessToken", getAccessTokenController);
 
 export default authRouter;
