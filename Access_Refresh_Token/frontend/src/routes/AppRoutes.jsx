@@ -13,14 +13,12 @@ import { useDispatch } from 'react-redux'
 import { addUser, removeUser } from '../state/AuthReducer'
 
 const AppRoutes = () => {
-
     const dispatch = useDispatch();
-
     useEffect(() => {
         (async () => {
             try{
                 const res = await axiosInstance.get("/api/auth/me");
-                console.log("User data retrieved successfully:", res.data);
+                // console.log("User data retrieved successfully:", res.data);
                 dispatch(addUser(res?.data?.user));
             }catch(error){
                 dispatch(removeUser());
