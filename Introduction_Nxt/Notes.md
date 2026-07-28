@@ -56,4 +56,36 @@
         - element: page.js
         - [id] - (Folder_Name): /product/ <anything>
         - await {params}: iske andar <anything> ka value store raheta he;
-        
+
+- Folder Structure:
+    - /app - routing folder
+    - /components
+    - /context
+    - /hooks
+    - utils
+    - context
+    - apis
+
+- /app/auth/login || /app/auth/register:
+    - page.js
+    - Folder: AuthLayout
+        - page.js
+        - layout.js
+        - Folder: login
+            - page.js
+        - Folder: register
+            - page.js
+
+
+
+
+npx shadcn@latest add button
+    - Redex
+    - Nova
+
+
+npx shadcn@latest add skeleton
+npm install next-themes
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add card
+npx shadcn@latest add badge
